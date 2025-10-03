@@ -1,6 +1,0 @@
-Nummer = Vorwahl + { Ziffernblock + Leerzeichen } + Ziffernblock
-Vorwahl = ["0" | InternationaleVorwahl]
-InternationaleVorwahl = "++" + Ziffer + Ziffer + Leerzeichen
-Ziffernblock = 1{Ziffer}
-Ziffer = ["0" | "1" | ... | "9"]
-Leerzeichen = ["#" | "/"]
