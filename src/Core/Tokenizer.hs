@@ -65,12 +65,10 @@ tokenizeRec oldState (c:cs) = if error then (newSymbols, False) else (newSymbols
         (TzerState oldAutos oldFas oldAllTrapped) = oldState -- Destructure for easier property access
         whitespace = isSpace c
 
-        updatedState
-            | whitespace = resetTokenizerState oldState -- Reset automatons when encountering whitespace
-            | otherwise = stepAllAutos c oldAutos -- Otherwise step automatons
+        updatedState = stepAllAutos c oldAutos
         (TzerState _ _ newAllTrapped) = updatedState
 
-        newSymbols = if newAllTrapped || whitespace then maybeToList oldFas else []
+        newSymbols = if newAllTrapped then maybeToList oldFas else []
 
         -- Stop scanning if new step is trapped and there was no accepted symbol on the previous character
         error = newAllTrapped && isNothing oldFas
@@ -81,8 +79,9 @@ tokenizeRec oldState (c:cs) = if error then (newSymbols, False) else (newSymbols
             | newAllTrapped = resetTokenizerState updatedState
             | otherwise = updatedState
         stringForRest
-            | newAllTrapped = c:cs -- Repeat current character if we are trapped on it
-            | otherwise = cs
+            | not newAllTrapped = cs
+            | whitespace = trimStart cs
+            | not whitespace = c:cs -- Repeat current character if we are trapped on it
 
         (symbolsFromRest, successFromRest) = tokenizeRec stateForRest stringForRest
 

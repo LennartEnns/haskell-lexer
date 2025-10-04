@@ -6,12 +6,16 @@ build-type:         Simple
 library
   hs-source-dirs:   src
   exposed-modules:
-    InitAutomatons
+    Init.InitAutomatons
     Core.Tokenizer
   other-modules:
-    Core.Utils
     Core.Automaton.Commons
     Core.Automaton.Generator
+    Core.Utils
+    Init.Automatons.ExactSequenceAutomatons
+    Init.Automatons.IdentifierAutomaton
+    Init.Automatons.StringAutomaton
+    Init.Common
   build-depends:
     base >=4.3 && <5,
     Cabal-syntax
