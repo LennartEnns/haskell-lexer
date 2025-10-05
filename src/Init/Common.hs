@@ -10,9 +10,9 @@ data Symbol =
     -- Can be matched as exact sequences
     Public | Static | Class
     | VoidType | StringType
-    | MemberAccess | LPar | RPar | LCBrac | RCBrac | LSqBrac | RSqBrac | StmtEnd
+    | FieldAccess | LPar | RPar | LCBrac | RCBrac | LSqBrac | RSqBrac | StmtEnd
     -- Require custom automatons
-    | String | Identifier
+    | Comment | String | Identifier
     deriving (Read, Show, Enum, Eq)
 
 -- We assume that a keyword is at most 127 characters long!

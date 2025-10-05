@@ -3,6 +3,7 @@ module Main where
 import System.Environment (getArgs)
 import System.Exit (exitFailure, exitSuccess)
 import Init.InitAutomatons (initAutomatons)
+import Init.Common (CommonAuto)
 import Core.Tokenizer (tokenize)
 
 autos = initAutomatons
@@ -11,8 +12,8 @@ main :: IO ()
 main = do
     args <- getArgs
     case args of
-        [stmt] -> runTokenizer stmt            -- passed target text directly
-        ["-f", fileName] -> do                 -- passed path to file that contains target text
+        [stmt] -> runTokenizer stmt          -- passed target text directly
+        ["-f", fileName] -> do               -- passed path to file that contains target text
             content <- readFile fileName
             runTokenizer content
         _ -> do

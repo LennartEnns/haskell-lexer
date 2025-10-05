@@ -9,7 +9,7 @@ exactSymbols :: [(Symbol, String)]
 exactSymbols = [
     (Public, "public"), (Static, "static"), (Class, "class"),
     (VoidType, "void"), (StringType, "String"),
-    (MemberAccess, "."), (LPar, "("), (RPar, ")"), (LCBrac, "{"), (RCBrac, "}"), 
+    (FieldAccess, "."), (LPar, "("), (RPar, ")"), (LCBrac, "{"), (RCBrac, "}"), 
     (LSqBrac, "["), (RSqBrac, "]"), (StmtEnd, ";")
     ]
 

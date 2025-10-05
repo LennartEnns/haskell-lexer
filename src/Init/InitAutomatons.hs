@@ -4,9 +4,10 @@ module Init.InitAutomatons (
 ) where
 
 import Init.Common (CommonAuto)
+import Init.Automatons.CommentAutomaton (commentAutomaton)
 import Init.Automatons.ExactSequenceAutomatons (exactSequenceAutomatons)
 import Init.Automatons.StringAutomaton (stringAutomaton)
 import Init.Automatons.IdentifierAutomaton (identifierAutomaton)
 
 initAutomatons :: [CommonAuto]
-initAutomatons = exactSequenceAutomatons ++ [stringAutomaton] ++ [identifierAutomaton]
+initAutomatons = [commentAutomaton] ++ exactSequenceAutomatons ++ [stringAutomaton] ++ [identifierAutomaton]
