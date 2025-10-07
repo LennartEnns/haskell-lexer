@@ -14,6 +14,7 @@ Go to the project root, then execute the following commands with cabal installed
 - `cabal build tokenizer`
 - Run on direct input: `cabal run tokenizer -- <input>`
 - Run on file: `cabal run tokenizer -- -f <filepath>`
+- Run on the included test-input file: `cabal run tokenizer -- -f "./test-input"`
 - Run and output to file: `cabal run tokenizer -- (args) > (output-filepath)`
 
 ## Simple Automaton
