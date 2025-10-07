@@ -85,5 +85,5 @@ tokenizeRec oldState (c:cs) = if error then (newSymbols, False) else (newSymbols
 
         (symbolsFromRest, successFromRest) = tokenizeRec stateForRest stringForRest
 
-tokenize :: (Eq stateType) =>  [Automaton stateType symbolType] -> String -> ([symbolType], Bool)
+tokenize :: (Eq stateType) => [Automaton stateType symbolType] -> String -> ([symbolType], Bool)
 tokenize autos s = tokenizeRec (initialTokenizerStateFromAutos autos) (trim s)
