@@ -1,4 +1,4 @@
--- This module defines the symbols and automatons for the tokenizer PoC
+-- This module defines the symbols and automatons for the single automaton PoC
 module Init.Simple.InitAutomaton (
     simpleTokenize
 ) where
@@ -28,7 +28,6 @@ data DummySymbol = DummySymbol
 data Symbol = Public | Static | Class | Void
     deriving (Read, Show, Enum, Eq)
 
--- We assume that a keyword is at most 127 characters long!
 type SimpleAuto = Automaton State DummySymbol
 
 keywords = ["public", "static", "class", "void"]
