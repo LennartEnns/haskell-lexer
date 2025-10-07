@@ -1,7 +1,8 @@
 # Haskell Lexer PoC
-This project uses Cabal for building and running the executables.
-Install Cabal here: https://www.haskell.org/cabal/
+An interesting usecase for functional programming.
 
+This project uses Cabal for building and running the executables.
+Install Cabal here: https://www.haskell.org/cabal/ \
 You can build + run one of the following executables.
 
 ## Full Tokenizer
