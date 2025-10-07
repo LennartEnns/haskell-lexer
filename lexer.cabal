@@ -6,25 +6,35 @@ build-type:         Simple
 library
   hs-source-dirs:   src
   exposed-modules:
-    Init.Common
-    Init.InitAutomatons
+    Init.Tokenizer.Common
+    Init.Tokenizer.InitAutomatons
+    Init.Simple.InitAutomaton
     Core.Tokenizer
   other-modules:
     Core.Automaton.Commons
     Core.Automaton.Generator
     Core.Utils
-    Init.Automatons.CommentAutomaton
-    Init.Automatons.ExactSequenceAutomatons
-    Init.Automatons.IdentifierAutomaton
-    Init.Automatons.StringAutomaton
+    Init.Tokenizer.Automatons.CommentAutomaton
+    Init.Tokenizer.Automatons.ExactSequenceAutomatons
+    Init.Tokenizer.Automatons.IdentifierAutomaton
+    Init.Tokenizer.Automatons.StringAutomaton
   build-depends:
     base >=4.3 && <5,
     Cabal-syntax
   default-language: Haskell2010
   ghc-options: -O2
 
-executable lexer
-  hs-source-dirs:   app
+executable tokenizer
+  hs-source-dirs:   app/Tokenizer/
+  main-is:          Main.hs
+  build-depends:
+    base >=4.3 && <5,
+    lexer
+  default-language: Haskell2010
+  ghc-options:      -O2 -split-sections -optl -s
+
+executable simple
+  hs-source-dirs:   app/Simple/
   main-is:          Main.hs
   build-depends:
     base >=4.3 && <5,

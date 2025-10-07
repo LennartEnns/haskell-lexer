@@ -1,4 +1,4 @@
-module Init.Automatons.IdentifierAutomaton (
+module Init.Tokenizer.Automatons.IdentifierAutomaton (
     identifierAutomaton
 ) where
 
@@ -9,7 +9,7 @@ import Core.Automaton.Commons (
     AutomatonVars (AutoVars),
     initialVarsFromConstants
     )
-import Init.Common (CommonAuto, Symbol(..))
+import Init.Tokenizer.Common (CommonAuto, Symbol(..))
 
 isValidStart :: Char -> Bool
 isValidStart c = isAsciiLower c || isAsciiUpper c || c == '_'

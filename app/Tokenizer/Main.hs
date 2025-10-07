@@ -2,8 +2,8 @@ module Main where
 
 import System.Environment (getArgs)
 import System.Exit (exitFailure, exitSuccess)
-import Init.InitAutomatons (initAutomatons)
-import Init.Common (CommonAuto)
+import Init.Tokenizer.InitAutomatons (initAutomatons)
+import Init.Tokenizer.Common (CommonAuto)
 import Core.Tokenizer (tokenize)
 
 autos = initAutomatons
@@ -20,6 +20,7 @@ main = do
             putStrLn "Usage:"
             putStrLn "  myprog <text>"
             putStrLn "  myprog -f <file>"
+            exitFailure
 
 runTokenizer :: String -> IO ()
 runTokenizer stmt = do

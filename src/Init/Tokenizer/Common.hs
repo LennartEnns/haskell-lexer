@@ -1,4 +1,4 @@
-module Init.Common (
+module Init.Tokenizer.Common (
     Symbol(..),
     CommonAuto
 ) where

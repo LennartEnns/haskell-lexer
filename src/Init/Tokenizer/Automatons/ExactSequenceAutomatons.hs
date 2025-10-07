@@ -1,9 +1,9 @@
-module Init.Automatons.ExactSequenceAutomatons (
+module Init.Tokenizer.Automatons.ExactSequenceAutomatons (
     exactSequenceAutomatons
 ) where
 
 import Core.Automaton.Generator (generateAutoFromKeyword)
-import Init.Common (Symbol(..), CommonAuto)
+import Init.Tokenizer.Common (Symbol(..), CommonAuto)
 
 exactSymbols :: [(Symbol, String)]
 exactSymbols = [

@@ -1,4 +1,4 @@
-module Init.Automatons.CommentAutomaton (
+module Init.Tokenizer.Automatons.CommentAutomaton (
     commentAutomaton
 ) where
 
@@ -8,7 +8,7 @@ import Core.Automaton.Commons (
     AutomatonVars (AutoVars),
     initialVarsFromConstants
     )
-import Init.Common (CommonAuto, Symbol(..))
+import Init.Tokenizer.Common (CommonAuto, Symbol(..))
 
 sInit = 0
 sOneSlash = 1
