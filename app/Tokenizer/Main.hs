@@ -3,7 +3,6 @@ module Main where
 import System.Environment (getArgs)
 import System.Exit (exitFailure, exitSuccess)
 import Init.Tokenizer.InitAutomatons (initAutomatons)
-import Init.Tokenizer.Common (CommonAuto)
 import Core.Tokenizer (tokenize)
 
 autos = initAutomatons
