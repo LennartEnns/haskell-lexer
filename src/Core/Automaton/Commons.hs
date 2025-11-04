@@ -45,7 +45,8 @@ isTrapped auto = (state (vars auto)) == (errorState (constants auto))
 
 -- Initialized automaton vars based on the given constants
 initialVarsFromConstants :: AutomatonConstants stateType symbolType -> AutomatonVars stateType
-initialVarsFromConstants consts = AutoVars (initState consts) False
+initialVarsFromConstants consts = AutoVars state (isAcceptingFunc consts state)
+    where state = initState consts
 
 -- Set the automaton to its initial state
 toInit :: Automaton stateType symbolType -> Automaton stateType symbolType
